@@ -1,4 +1,5 @@
 chooseNextLibToSignIn = require("./chooseNextLibToSignIn");
+chooseBooksToScanToday = require("./chooseBooksToScanToday");
 module.exports =(data)=>{
 
     var scannedBook = {}
@@ -6,14 +7,16 @@ module.exports =(data)=>{
 
     var timeToNextSignUp = 0;
     var beingSignedIn = null;
+    var ret = {};
     for (var i = 0; i<= data.tpstt; i++) {
         if (timeToNextSignUp == 0) {
             if (beingSignedIn != null) {
                 beingSignedIn.signedIn = true;
                 signedUpLibs.push(beingSignedIn);
+                ret[beingSignedIn.index] = [];
                 beingSignedIn = null;
             }
-            var nextLib = chooseNextLibToSignIn(data);
+            var nextLib = chooseNextLibToSignIn(data, data.tpstt - i);
             if (nextLib == null) {
                 break;
             }
@@ -24,8 +27,16 @@ module.exports =(data)=>{
         } else {
             timeToNextSignUp-=1;
         }
+        
+        var booksToScanToday = chooseBooksToScanToday(data, scannedBook);
+        Object.keys(booksToScanToday).forEach((idx)=>{
+            ret[idx] = ret[idx].concat(booksToScanToday[idx]);
+        })
     }
-
-    return {"signedUpLibs": signedUpLibs};
+    out = [];
+    signedUpLibs.forEach((lib)=>{
+        out.push({"indexLib": lib.index, "scannedBooks": ret[lib.index]});
+    });
+    return out;
 
 };

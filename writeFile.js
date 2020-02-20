@@ -24,7 +24,6 @@ exports.writeFile =(resp, fileName) =>  {
         output += `${JSON.stringify(lib.scannedBooks).slice(1, -1).replace(/,/g, " ")}\n`;
     });
 
-    console.log(output);
 
     fs.writeFileSync(`results/${fileName}.resp`, output, 'utf8');
 }

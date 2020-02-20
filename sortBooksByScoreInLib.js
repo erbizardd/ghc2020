@@ -12,4 +12,5 @@ module.exports = (valuesBook, lib)=>{
     lib.scoreMap = scoreMap;
     lib.idxByScoreRev = idxOrdererd;
     lib.busy = false;
+    lib.signedIn = false;
 }
