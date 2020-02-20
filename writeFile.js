@@ -20,8 +20,9 @@ exports.writeFile =(resp, fileName) =>  {
     let output = `${resp.length}\n`;
 
     resp.forEach(lib => {
-        output += `${lib.indexLib} ${lib.scannedBooks.length}\n`;
+        
         if (lib.scannedBooks.length > 0){
+            output += `${lib.indexLib} ${lib.scannedBooks.length}\n`;
             output += `${JSON.stringify(lib.scannedBooks).slice(1, -1).replace(/,/g, " ")}\n`;
         }
     });
