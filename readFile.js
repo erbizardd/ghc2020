@@ -24,7 +24,7 @@ exports.readFile = (file) => {
             capaBook: l1[2]
         })
     }
-    console.log({tpstt:meta[2], valueBook,libs})
-    //return {tpstt:meta[2], valueBook,libs:[]};
+    
+    return {tpstt:meta[2], valueBook,libs:[]};
 }
     
