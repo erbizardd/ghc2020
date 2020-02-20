@@ -1,5 +1,11 @@
-module.exports = (data)=>{
+module.exports = (data, daysRemaining)=>{
     //signeUpLibs c'est une hashmap, pas un array
-    console.log(data)
-    return data.libs.filter((lib) => !lib.busy).pop()   
+    console.log(daysRemaining)
+    console.log(data.libs.filter((lib) =>{
+        console.log(lib.delais)
+        return !lib.busy && daysRemaining > lib.delais
+    } ).pop())
+    return data.libs.filter((lib) =>{
+        return !lib.busy && daysRemaining > lib.delais
+    } ).pop()
 };
