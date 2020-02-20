@@ -9,6 +9,7 @@
     "c": "PATHFILE=c.in node index.js",
     "d": "PATHFILE=d.in node index.js",
     "e": "PATHFILE=e.in node index.js",
+    "f": "PATHFILE=e.in node index.js",
     "all": "PATHFILE=all node --max-old-space-size=8192 index.js"
   },
   "author": "",
