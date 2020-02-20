@@ -1,0 +1,16 @@
+{
+  "name": "solution",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "a": "set PATHFILE=a.in&&node index.js",
+    "b": "set PATHFILE=b.in&&node index.js",
+    "c": "set PATHFILE=c.in&&node index.js",
+    "d": "set PATHFILE=d.in&&node index.js",
+    "e": "set PATHFILE=e.in&&node index.js",
+    "all": "set PATHFILE=all&&node --max-old-space-size=8192 index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
