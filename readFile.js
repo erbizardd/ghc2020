@@ -25,6 +25,6 @@ exports.readFile = (file) => {
         })
     }
     
-    return {tpstt:meta[2], valueBook,libs:[]};
+    return {tpstt:meta[2], valueBook,libs};
 }
     
