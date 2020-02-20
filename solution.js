@@ -1,5 +1,5 @@
 exports.process = (data) => {
-    return new Promise((resovle) => {
-    	resovle(data.array)
+    return new Promise((resolve) => {
+    	resolve(data.array)
     })
 }
