@@ -11,4 +11,5 @@ module.exports = (valuesBook, lib)=>{
     Object.keys(scoreMap).reverse().forEach((k)=>idxOrdererd.push(scoreMap[k]));
     lib.scoreMap = scoreMap;
     lib.idxByScoreRev = idxOrdererd;
+    lib.busy = false;
 }
