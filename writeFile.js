@@ -21,7 +21,9 @@ exports.writeFile =(resp, fileName) =>  {
 
     resp.forEach(lib => {
         output += `${lib.indexLib} ${lib.scannedBooks.length}\n`;
-        output += `${JSON.stringify(lib.scannedBooks).slice(1, -1).replace(/,/g, " ")}\n`;
+        if (lib.scannedBooks.length > 0){
+            output += `${JSON.stringify(lib.scannedBooks).slice(1, -1).replace(/,/g, " ")}\n`;
+        }
     });
 
 

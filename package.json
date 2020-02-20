@@ -10,13 +10,14 @@
     "d": "set PATHFILE=d.in&&  node index.js",
     "e": "set PATHFILE=e.in&&  node index.js",
     "f": "set PATHFILE=f.in&&  node index.js",
+    "all": "set PATHFILE=all&& node --max-old-space-size=8192 index.js",
     "ad": "PATHFILE=a.in  node index.js",
     "bd": "PATHFILE=b.in   node index.js",
     "cd": "PATHFILE=c.in   node index.js",
     "dd": "PATHFILE=d.in   node index.js",
     "ed": "PATHFILE=e.in   node index.js",
     "fd": "PATHFILE=f.in   node index.js",
-    "all": "PATHFILE=all node --max-old-space-size=8192 index.js"
+    "alld": "PATHFILE=all node --max-old-space-size=8192 index.js"
   },
   "author": "",
   "license": "ISC"
