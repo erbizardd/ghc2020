@@ -40,7 +40,9 @@ module.exports =(data)=>{
     }
     out = [];
     signedUpLibs.forEach((lib)=>{
-        out.push({"indexLib": lib.index, "scannedBooks": ret[lib.index]});
+        if (ret[lib.index].length) {
+            out.push({"indexLib": lib.index, "scannedBooks": ret[lib.index]});
+        }
     });
     return out;
 
