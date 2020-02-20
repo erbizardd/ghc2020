@@ -1,9 +1,14 @@
+const calcMaxPoint = require("./calcMaxPointsByLib")
 module.exports = (data, daysRemaining)=>{
-    //signeUpLibs c'est une hashmap, pas un array
-    data.libs.filter((lib) =>{
-        return !lib.busy && daysRemaining > lib.delais
-    } ).pop();
-    return data.libs.filter((lib) =>{
-        return !lib.busy && daysRemaining > lib.delais
-    } ).pop();
+
+    data.libs.sort(function(a, b) {
+        return calcMaxPoint(a,data.valueBook) - calcMaxPoint(b,data.valueBook);
+    });
+    for (let index = 0; index < data.libs.length; index++) {
+        if(!data.libs[index].busy && daysRemaining > data.libs[index].delais){
+            return data.libs[index]
+        }
+        
+    }
+
 };
