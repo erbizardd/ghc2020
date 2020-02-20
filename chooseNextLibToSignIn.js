@@ -1,5 +1,10 @@
-module.exports((data, signedUpLibs)=>{
+module.exports((data)=>{
     //signeUpLibs c'est une hashmap, pas un array
-    var nextLib = null;
-    return nextLib;
+    console.log(data)
+    return data.libs.filter((lib)=>{
+        if(!lib.busy){
+            return true;
+        }
+        return false;
+    })   
 });
